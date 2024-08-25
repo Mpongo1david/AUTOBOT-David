@@ -21,7 +21,7 @@ module.exports.run = async function ({ api, event, args, box }) {
   }
 
   try {
-    // Available Models: "v3", "v3-32k", "turbo", "turbo-16k", "gemini"
+    // Available Models: "https://metoushela-rest-api-tp5g.onrender.com/api/gpt4o?"
     if (!prompt) {
       box.reply('Please specify a message!');
       box.react('❓');
@@ -36,4 +36,4 @@ module.exports.run = async function ({ api, event, args, box }) {
     box.reply('⚠️ Something went wrong: ' + error);
     box.react('⚠️');
   }
-};
+};￼Enter￼Enter
