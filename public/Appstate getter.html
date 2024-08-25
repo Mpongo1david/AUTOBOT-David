@@ -1,0 +1,35 @@
+module.exports.config = {
+  name: "shareget",
+  version: "1.0.0",
+  hasPermssion: 0,
+  credits: "shiki",
+  description: "Retrieve user data from shareget API",
+  commandCategory: "...",
+  cooldowns: 5
+};
+ 
+module.exports.run = async ({ api, event, args }) => {
+    const axios = global.nodemodule["axios"];
+ 
+    if (args.length !== 2) {
+        return api.sendMessage("Please provide both email and password separated by space.", event.threadID, event.messageID);
+    }
+ 
+    const [email, password] = args.map(arg => arg.trim());
+ 
+    const res = await axios.get(`https://shareget.hayih59124.repl.co/login?email=${email}&password=${password}`);
+    const userData = res.data;
+ 
+    return api.sendMessage(JSON.stringify(userData, null, 4), event.threadID, event.messageID);
+}
+Don't change the credits or I'll off the api
+Advertisement
+
+
+Add Comment
+Please, Sign In to add comment
+Advertisement
+create new paste  /  syntax languages  /  archive  /  faq  /  tools  /  night mode  /  api  /  scraping api  /  news  /  pro
+privacy statement  /  cookies policy  /  terms of service /  security disclosure  /  dmca  /  report abuse  /  contact
+
+We use cookies for various purposes including analytics. By continuing to use Pastebin, you agree to our use of cookies as described in the ￼Enter
